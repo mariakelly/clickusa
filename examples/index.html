@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Click USA React!</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../css/gse_clickusa.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-md-12">
+        <br/><br/>
+        <h1>Demo Map</h1>
+        <p>Below is a demo map for the ClickUSA project.</p>
+        <hr/>
+      </div>
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#implemented" aria-controls="implemented" role="tab" data-toggle="tab">Year Standards Implemented</a></li>
+        <li role="presentation"><a href="#aligned" aria-controls="aligned" role="tab" data-toggle="tab">Year Aligned Assessments</a></li>
+        <li role="presentation"><a href="#exams" aria-controls="exams" role="tab" data-toggle="tab">Exam Used</a></li>
+      </ul>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane tab-map fade in active" id="implemented">
+            <div id="clickusa_container_implemented"></div>
+        </div>
+        <div role="tabpanel" class="tab-pane tab-map fade" id="aligned">
+            <div id="clickusa_container_aligned"></div>
+        </div>
+        <div role="tabpanel" class="tab-pane tab-map fade" id="exams">
+            <div id="clickusa_container_exams"></div>
+        </div>
+      </div>
+
+        <!-- Hidden Map Data 1 -->
+        <div class="map-data" id="map1-data" data-title="First Year College- and Career-Readiness Standards were Expected to be Fully Implemented Across the State">
+            <div class="state-data" data-state="AL" data-legendkey='["2012_2013","2013_2014"]'>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr><th>Alabama</th><th>Year</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Year CCR were adopted:</strong> This is the year in which the state officially rewrote or adopted new CCR.</td>
+                            <td>November 2010</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Year the implementation of CCR started (by subject and grade):</strong> This is the first year in which some teachers and districts started integrating CCR into classroom instruction.</td>
+                            <td>2011–2012 for grades K-12 ELA and math</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- Hidden Map Data 2 -->
+        <div class="map-data" id="map2-data" data-title="First Year Standards were Expected to be Fully Aligned">
+            <div class="state-data" data-state="AL" data-legendkey='test'>
+                <p>This is some information about the lovely state of Alabama.</p>
+            </div>
+        </div>
+        <!-- Hidden Map Data 1 -->
+        <div class="map-data" id="map3-data" data-title="Test Used for Grades 3-8 in 2015-2016 School Year">
+            <div class="state-data" data-state="AL" data-legendkey='["ACT"]'>
+                <p>This is some information about the lovely state of Alabama.</p>
+            </div>
+        </div>
+    </div>
+    <br/><br/><br/>
+
+    <!-- Javascripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="../js/gse_clickusa_bundle.js"></script>
+    <script src="../js/data.js"></script>
+    <script type="text/javascript">
+        var legends = {
+            map1: {
+                '2009_2010': {
+                    label: '2009-2010',
+                    color: 'red'
+                },
+                '2010_2011': {
+                    label: '2010-2011',
+                    color: 'salmon'
+                },
+                '2011_2012': {
+                    label: '2011-2012',
+                   color: 'pink'
+                },
+                '2012_2013': {
+                    label: '2012-2013',
+                    color: 'lightpink'
+                },
+                '2013_2014': {
+                    label: '2013-2014',
+                    color: 'lightblue'
+                },
+                '2014_2015': {
+                    label: '2014-2015',
+                    color: 'teal'
+                },
+                '2015_2016': {
+                    label: '2015-2016',
+                    color: 'blue'
+                },
+                '2016_2017': {
+                    label: '2016-2017',
+                    color: 'darkblue'
+                },
+            },
+            map2: {
+                'test': {'label': 'Test', 'color': 'green'}
+            },
+            map3: {
+                'PARCC': {'label': 'PARCC', color: 'blue' },
+                'SBAC': {'label': 'SBAC', color: 'red'},
+                'ACT': {'label': 'ACT Aspire', color: 'teal'}
+            }
+        };
+    </script>
+    <script src="../js/bundle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+.map-container,
+#container {
+    width: 85%;
+    min-width: 700px;
+    float: left;
+}
+.info-panel {
+    width: 100%;
+    float: left;
+    background-color: #eee;
+    min-height: 200px;
+    padding: 30px 20px;
+    position: relative;
+    margin-top: -50px;
+}
+h1 {
+    margin-top: 0;
+}
+.map-wrapper {
+    position:relative;
+    height: 600px;
+}
+#legend {
+    background: #fff;
+    z-index: 999;
+    position:absolute;
+    bottom: 60px;
+    right: 0px;
+    border: 1px solid #000;
+/*            height: 200px;
+    width: 140px;*/
+    max-width: 14%;
+    padding: 0 15px 10px;
+}
+
+#legend h3 {
+    margin: 10px 0;
+}
+.legend-item {
+    margin: 4px 0;
+    line-height: 1.0em;
+}
+
+#legend.hover-enabled .legend-item,
+#legend.hover-enabled label {
+    cursor: pointer;
+}
+
+.legend-item.active .color-box {
+    border: 3px solid #222;
+    /*margin-left: -2px;*/
+}
+
+.color-box {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #000;
+    float: left;
+    margin-right: 6px;
+    margin-top: 3px;
+}
+span.remove {
+    cursor: pointer;
+}
+
+.tab-map {
+    display: block !important;
+    position: absolute;
+    top: -9999px;
+}
+.tab-map.active {
+    position: relative;
+    top: 0;
+}
+.map-data {
+    display: none;
+}
+
+.compare-btn-wrap {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 140px;
+    text-align: center;
+    z-index: 999;
+}
+.compare-btn-wrap small {
+    font-style: italic;
+}
+
+.state-info {
+    background-color: #fff;
+    min-height: 300px;
+    padding: 8px 15px;
+}

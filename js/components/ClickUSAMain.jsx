@@ -7,10 +7,7 @@ var MapInfoPanel = require('./MapInfoPanel.jsx');
 
 var ClickUSAMain = React.createClass({
     getInitialState: function() {
-      var mapData = parseMapData(this.props.id);
       return {
-          mapData: mapData,
-          mapLegend: legends[this.props.id],
           comparisonMode: false,
           currentStates: []
       };
@@ -29,7 +26,9 @@ var ClickUSAMain = React.createClass({
       this.setState({
         currentStates: newCurrentStates
       }, function() {
-        this.props.onStateAdded(st);
+        if (typeof this.props.onStateAdded === 'function') {
+            this.props.onStateAdded(st);
+        }
       });
     },
     removeState: function(st) {
@@ -44,7 +43,9 @@ var ClickUSAMain = React.createClass({
       this.setState({
         currentStates: newCurrentStates
       }, function() {
-        this.props.onStateRemoved(st);
+        if (typeof this.props.onStateRemoved === 'function') {
+            this.props.onStateRemoved(st);
+        }
       });
     },
     onStateClicked: function(){
@@ -59,7 +60,7 @@ var ClickUSAMain = React.createClass({
     },
     render: function() {
       var comparisonState = (this.state.comparisonMode) ? 'active' : 'inactive';
-      var title = (typeof this.state.mapData.title != "undefined") ? <h3 className="title">{this.state.mapData.title}</h3> : '';
+      var title = (typeof this.props.mapData.title != "undefined") ? <h3 className="title">{this.props.mapData.title}</h3> : '';
       var compareDisplay = [];
       if (this.props.compareEnabled) {
         compareDisplay = (
@@ -76,17 +77,17 @@ var ClickUSAMain = React.createClass({
             <RaphaelMap
               id={this.props.id}
               ref='map'
-              data={this.state.mapData}
+              data={this.props.mapData}
               comparisonMode={this.state.comparisonMode}
               onStateAdded={this.addState}
               onStateRemoved={this.removeState}
               onStateClicked={this.onStateClicked}
-              legend={this.state.mapLegend}
+              legend={this.props.mapLegend}
               hoverEnabled={this.props.hoverEnabled}>
             </RaphaelMap>
             <MapInfoPanel
               ref='info'
-              data={this.state.mapData}
+              data={this.props.mapData}
               comparisonMode={this.state.comparisonMode}
               currentStates={this.state.currentStates}
               onStateCanceled={this.onStateCanceled}>

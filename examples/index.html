@@ -15,28 +15,14 @@
         <p>Below is a demo map for the ClickUSA project.</p>
         <hr/>
       </div>
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active"><a href="#implemented" aria-controls="implemented" role="tab" data-toggle="tab">Year Standards Implemented</a></li>
-        <li role="presentation"><a href="#aligned" aria-controls="aligned" role="tab" data-toggle="tab">Year Aligned Assessments</a></li>
-        <li role="presentation"><a href="#exams" aria-controls="exams" role="tab" data-toggle="tab">Exam Used</a></li>
-      </ul>
 
       <!-- Tab panes -->
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane tab-map fade in active" id="implemented">
-            <div id="clickusa_container_implemented"></div>
-        </div>
-        <div role="tabpanel" class="tab-pane tab-map fade" id="aligned">
-            <div id="clickusa_container_aligned"></div>
-        </div>
-        <div role="tabpanel" class="tab-pane tab-map fade" id="exams">
-            <div id="clickusa_container_exams"></div>
-        </div>
+      <div id="map-wrapper" class="container">
+        <div id="clickusa-map"></div>
       </div>
 
         <!-- Hidden Map Data 1 -->
-        <div class="map-data" id="map1-data" data-title="First Year College- and Career-Readiness Standards were Expected to be Fully Implemented Across the State">
+        <div class="map-data" id="clickusa-display-data" data-title="First Year College- and Career-Readiness Standards were Expected to be Fully Implemented Across the State">
             <div class="state-data" data-state="AL" data-legendkey='["2012_2013","2013_2014"]'>
                 <table class="table table-striped table-bordered">
                     <thead>
@@ -78,7 +64,7 @@
     <script src="../js/data.js"></script>
     <script type="text/javascript">
         var legends = {
-            map1: {
+            'clickusa-display': {
                 '2009_2010': {
                     label: '2009-2010',
                     color: 'red'
@@ -110,15 +96,7 @@
                 '2016_2017': {
                     label: '2016-2017',
                     color: 'darkblue'
-                },
-            },
-            map2: {
-                'test': {'label': 'Test', 'color': 'green'}
-            },
-            map3: {
-                'PARCC': {'label': 'PARCC', color: 'blue' },
-                'SBAC': {'label': 'SBAC', color: 'red'},
-                'ACT': {'label': 'ACT Aspire', color: 'teal'}
+                }
             }
         };
     </script>
